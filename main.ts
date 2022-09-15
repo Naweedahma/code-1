@@ -2,24 +2,27 @@ input.onButtonPressed(Button.A, function () {
     basic.showNumber(num)
     num += 1
 })
-input.onGesture(Gesture.TiltLeft, function () {
-    sprite.move(-1)
-})
 input.onButtonPressed(Button.B, function () {
     basic.showNumber(num)
     num += -1
 })
-input.onGesture(Gesture.TiltRight, function () {
-    sprite.move(1)
+input.onGesture(Gesture.Shake, function () {
+    Random = randint(0, 10)
+    basic.showNumber(Random)
+    Sum = num + 5
+    basic.showNumber(Sum)
+    Product = num * 7
+    basic.showNumber(Product)
+    powers = powers ** 2
+    basic.showNumber(powers)
 })
-input.onGesture(Gesture.LogoDown, function () {
-    sprite.change(LedSpriteProperty.Y, 1)
-})
+let powers = 0
+let Product = 0
+let Sum = 0
+let Random = 0
 let num = 0
-let sprite: game.LedSprite = null
 basic.showIcon(IconNames.Rollerskate)
-sprite = game.createSprite(0, 0)
-num = 1
+num = 0
 basic.showNumber(num)
 basic.forever(function () {
 	
